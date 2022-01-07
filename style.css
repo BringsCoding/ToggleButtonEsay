@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+} 
+
+body { 
+    margin: 0;
+    padding: 0;
+    background-color:bisque ;
+}  
+
+.container { 
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.umschalter input { 
+    appearance: none; 
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 0;
+} 
+
+.umschalter { 
+    height: 8rem;
+    width: 14rem;
+    display: inline-block;
+    position: relative;
+} 
+
+.umschalter-button { 
+    width: 50%;
+    height: 7rem;
+    background-color: darkgray;
+    box-shadow: 0 0 3px #333333;
+    position: absolute;
+    top:8px; 
+    left: 10px;
+    transition: transform ease-in-out 0.5s;
+    border-radius: 50%;
+    /* Click wird nicht angefangen und "gehört" zur checkbox */
+    pointer-events: none;
+}
+
+.umschalter input:checked { 
+    background-color: dodgerblue;
+    border: 3px solid rgb(20, 82, 145);
+
+} 
+
+.umschalter input:checked + .umschalter-button { 
+background-color: whitesmoke;
+transform: translateX(100px);
+} 
+
+.umschalter input:checked + .umschalter-button::after { 
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background-image: url(akzeptieren.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat ;
+    width: 100%;
+    height: 100%; 
+}
